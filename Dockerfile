@@ -6,7 +6,7 @@ WORKDIR /home/app
 COPY pom.xml .
 RUN mvn dependency:resolve
 
-COPY src/ /home/app/src/
+COPY src /home/app/src/
 RUN mvn -DEMPRESTIMO_DB_HOST=host -DEMPRESTIMO_DB_PORT=27017 -DUSUARIO_SERVICE_HOST=host -DUSUARIO_SERVICE_PORT=8085 package
 
 #
